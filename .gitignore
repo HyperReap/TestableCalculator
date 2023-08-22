@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Calculator/obj
+/src/Calculator/bin
+/src/Mathematics/obj
+/src/Mathematics/bin
+/src/MathematicsTests/obj
+/src/MathematicsTests/bin
+/src/.vs
