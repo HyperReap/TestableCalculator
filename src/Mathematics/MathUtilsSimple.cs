@@ -46,7 +46,7 @@ namespace Mathematics
             return "";
         }
 
-        //TODO:: (3) use methods from MathBase
+        //TODO:: (3) use methods from MathBase  
         //TODO:: (5) Add operation for factorial
         //TODO:: (Optional) Refactor 
         private double ExecuteSingleOperation(double a, double b, string op)

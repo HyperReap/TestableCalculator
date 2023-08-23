@@ -106,7 +106,7 @@ namespace Mathematics
             throw new NotImplementedException();
         }
 
-        //TODO:: (6) Check out and debug functions for calculating factorial
+        //TODO:: (6) Check out and debug functions for calculating factorial    
         //Find mistake
         internal static int FactLoop(int a)
         {
@@ -120,6 +120,7 @@ namespace Mathematics
             return result;
         }
 
+        //TODO:: (6) Check out Callstack while debugging 
         internal static int FactRecursion(int a)
         {
             if (a < 2)
