@@ -25,7 +25,7 @@ namespace MathematicsTests
             int expected = 9;
             var result = MathUtilsSimple.Add(2, 7);
 
-            Assert.Equals(expected, result);
+            Assert.AreEqual(expected, result);
         }
 
         [TestCase(1, 1, 2)]
@@ -35,7 +35,53 @@ namespace MathematicsTests
             Assert.That(result, Is.EqualTo(expected)); //fluent assertion
         }
 
-        //TODO:: (1) add more tests for different operations
+
+        [TestCase(1, 1, 0)]
+        public void ParametrizedSubTest_ExpectSuccess(int a, int b, int expected)
+        {
+            var result = MathUtilsSimple.Sub(a, b);
+            Assert.That(result, Is.EqualTo(expected)); 
+        }
+
+
+        [TestCase(1, 1, 1)]
+        public void ParametrizedMulTest_ExpectSuccess(int a, int b, int expected)
+        {
+            var result = MathUtilsSimple.Mul(a, b);
+            Assert.That(result, Is.EqualTo(expected)); 
+        }
+
+
+
+        [TestCase(1, 1, 1)]
+        public void ParametrizedDivTest_ExpectSuccess(int a, int b, int expected)
+        {
+            var result = MathUtilsSimple.Div(a, b);
+            Assert.That(result, Is.EqualTo(expected)); 
+        }
+
+
+        [TestCase(1, 0)]
+        public void ParametrizedDivTest_ExpectException(int a, int b)
+        {
+            Assert.Throws<ArgumentException>(()=>MathUtilsSimple.Div(a, b));
+        }
+
+        [TestCase(3, 6)]
+        [TestCase(0, 1)]
+        public void ParametrizedFactRecursionTest_ExpectSuccess(int a, int expected)
+        {
+            var result = MathUtilsSimple.FactRecursion(a);
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(3, 6)]
+        [TestCase(0, 1)]
+        public void ParametrizedFactLoopTest_ExpectSuccess(int a, int expected)
+        {
+            var result = MathUtilsSimple.FactLoop(a);
+            Assert.That(result, Is.EqualTo(expected));
+        }
 
     }
 }

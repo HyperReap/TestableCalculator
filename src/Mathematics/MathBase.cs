@@ -79,13 +79,12 @@ namespace Mathematics
         }
 
 
-        //TODO:: (5.5) try to debug this Linq, Where is it used, 
+        //used in CalculateStack, Tokenize, and now CHeckInput
         internal bool IsOperator(string token)
         {
             return Operations.Any(x => x == token);
         }
 
-        //TODO:: (2) implement - / * operations, use TDD 
         internal static double Add(double a, double b)
         {
             return a + b;
@@ -93,21 +92,22 @@ namespace Mathematics
 
         internal static double Sub(double a, double b)
         {
-            throw new NotImplementedException();
+            return a - b;
         }
 
         internal static double Mul(double a, double b)
         {
-            throw new NotImplementedException();
+            return a * b;
         }
 
         internal static double Div(double a, double b)
         {
-            throw new NotImplementedException();
+            if (b == 0)
+                throw new ArgumentException("Cannot divide by zero");
+
+            return a / b;
         }
 
-        //TODO:: (6) Check out and debug functions for calculating factorial
-        //Find mistake
         internal static int FactLoop(int a)
         {
             int result = 1;
@@ -124,7 +124,7 @@ namespace Mathematics
         {
             if (a < 2)
             {
-                return 0;
+                return 1;
             }
             else
             {

@@ -40,14 +40,27 @@ namespace Mathematics
             return result.ToString();
         }
 
-        //TODO:: (4) implement checkInputSyntax
         internal string CheckInputSyntax(string input)
         {
+            if (input.Length < 2)
+                return "Not complete equation to calculate anything";
+            
+            if (input.Last().Equals("!"))
+                return "";
+
+            var lastSeen = 'a';
+            foreach (char c in input)
+            {
+                if (IsOperator(c.ToString()) && IsOperator(lastSeen.ToString()))
+                {
+                    return "Error: Two or more operators after each other";
+                }
+                lastSeen = c;
+            }
+
             return "";
         }
 
-        //TODO:: (3) use methods from MathBase
-        //TODO:: (5) Add operation for factorial
         //TODO:: (Optional) Refactor 
         private double ExecuteSingleOperation(double a, double b, string op)
         {
@@ -56,11 +69,16 @@ namespace Mathematics
             if (op == "+")
                 result = Add(b, a); 
             if (op == "-")
-                result = a - b;
+                result = Sub(a,b);
             if (op == "/")
-                result = a / b;
+                result = Div(a,b);
             if (op == "*")
-                result = a * b;
+                result = Mul(a,b);
+            if (op == "!")
+            {
+                int num = Convert.ToInt32(a);
+                result = FactLoop(num);
+            }
 
             return result;
         }
