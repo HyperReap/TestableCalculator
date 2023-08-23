@@ -52,7 +52,15 @@ namespace Calculator
 
         private void Calculate(object sender, RoutedEventArgs e)
         {
-            this.Input.Text = Math.Evaluate(this.Input.Text);
+            try
+            {
+                this.Input.Text = Math.Evaluate(this.Input.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An Error occured:\n" + ex.ToString());
+            }
         }
     }
 }
