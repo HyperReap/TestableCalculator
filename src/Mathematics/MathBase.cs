@@ -107,13 +107,14 @@ namespace Mathematics
         }
 
         //TODO:: (6) Check out and debug functions for calculating factorial    
+        //TODO:: (6.5) Find factorial at step 10 of number 40 
         //Find mistake
         internal static int FactLoop(int a)
         {
             int result = 1;
             while (a > 1)
             {
-                result *= a;
+                result =  result * a;
                 a--;
             }
 
